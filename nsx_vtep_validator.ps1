@@ -2,7 +2,7 @@ $cluster = "Physical"
 $vteplist = @()
 
 # Find all VTEP
-Get-Cluster $cluster |Get-VMHost | 
+Get-Cluster $cluster |Get-VMHost -State Connected| 
 %{ 
 	$e = Get-ESXCLI -VMhost $_.Name
 	$tempip = $e.network.ip.interface.ipv4.get($NULL,"vxlan") | Select IPv4Address
@@ -20,7 +20,7 @@ $vteplist | %{ $_.IPv4Address.ToString() }
 
 "Testing with framsize: $($framesize)"
 
-Get-Cluster $cluster | Get-VMHost | 
+Get-Cluster $cluster | Get-VMHost -State Connected| 
 %{
 	"Testing from host: $($_.Name)"
 	
