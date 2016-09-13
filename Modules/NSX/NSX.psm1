@@ -4,7 +4,10 @@ Accesses the NSXREST API
 
 .DESCRIPTION
 See:
-TODO
+DO NOT USE
+PLEASE USE PowerNSX
+THIS WAS A LEARNING PROJECT
+THIS IS UNSECURE
  
 #>
 
@@ -98,7 +101,7 @@ Function Connect-NSXREST {
 	       [Parameter(Mandatory=$true)][string] $Username,
 	       [Parameter(Mandatory=$true)][string] $Password
 	     )
-
+	print "WARNING DO NOT USE INSECURE LEARNING SCRIPT PLEASE LOOKUP PowerNSX"
 	$con = $null
 
 	if ($script:nsxConnected) 
