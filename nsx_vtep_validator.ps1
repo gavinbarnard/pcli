@@ -1,4 +1,4 @@
-$cluster = "Physical"
+param($cluster = "Physical")
 $vteplist = @()
 
 # Find all VTEP
