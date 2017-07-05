@@ -7,6 +7,9 @@ if ($PSBoundParameters.Keys.Count -lt 1)
 Get-Cluster -Name $ClusterName | Get-VMHost -State "Connected" | %{
     $e = Get-EsxCli -VMHost $_
     Write-Host "Hostname $_"
+    
+    $vdsname = $e.network.vswitch.dvs.vmware.vxlan.list().VDSName
+     
     $vxlanid = $e.network.vswitch.dvs.vmware.vxlan.network.list($vdsname,$NULL).VXLANID
     $vxlanid | % { 
 	Write-Host "VTEP Information for VNI $_"
