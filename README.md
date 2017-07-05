@@ -27,4 +27,5 @@ checks for a vdrPort
 > vsfwd_check.ps1
 checks vsfwd connections
 
-
+>	host_vni_vtep_info.ps1
+dumps host level VTEP information on a per VNI basis.
